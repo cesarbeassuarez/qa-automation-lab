@@ -1,3 +1,5 @@
+package com.cesar.qa.tests;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -6,7 +8,7 @@ import org.testng.annotations.Test;
 public class PrimerTest {
 
     @Test
-    public void abrirGoogle() {
+    public void abrirSerenityis() {
         // Setup automático del driver
         WebDriverManager.chromedriver().setup();
 
@@ -14,7 +16,7 @@ public class PrimerTest {
         WebDriver driver = new ChromeDriver();
 
         // Abrir Google
-        driver.get("https://www.google.com");
+        driver.get("https://demo.serenity.is/Account/Login/");
 
         // Obtener título
         String titulo = driver.getTitle();
