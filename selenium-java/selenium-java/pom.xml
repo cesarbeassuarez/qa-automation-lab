@@ -19,7 +19,7 @@
         <testng.version>7.10.2</testng.version>
         <webdrivermanager.version>5.9.2</webdrivermanager.version>
         <logback.version>1.4.14</logback.version>
-    </properties>
+    </properties> 
 
     <dependencies>
         <!-- Selenium WebDriver -->
