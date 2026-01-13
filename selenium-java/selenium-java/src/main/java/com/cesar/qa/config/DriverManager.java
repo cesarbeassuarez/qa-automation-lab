@@ -1,0 +1,68 @@
+package com.cesar.qa.config;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import java.time.Duration;
+
+public class DriverManager {
+
+    private static WebDriver driver;
+
+    public static void initDriver() {
+        if (driver != null) return;
+
+        String browser = ConfigReader.getProperty("browser");
+        boolean headless = Boolean.parseBoolean(ConfigReader.getProperty("headless"));
+
+        if (browser == null) browser = "chrome";
+
+        switch (browser.toLowerCase()) {
+            case "chrome":
+                WebDriverManager.chromedriver().setup();
+
+                ChromeOptions options = new ChromeOptions();
+                if (headless) {
+                    // "new" headless en Chrome moderno
+                    options.addArguments("--headless=new");
+                }
+                options.addArguments("--disable-gpu");
+                options.addArguments("--no-sandbox");
+
+                driver = new ChromeDriver(options);
+                break;
+
+            default:
+                throw new RuntimeException("Browser no soportado: " + browser);
+        }
+
+        applyConfig(driver);
+    }
+
+    private static void applyConfig(WebDriver driver) {
+        int implicit = Integer.parseInt(ConfigReader.getProperty("timeout.implicit"));
+        int pageLoad = Integer.parseInt(ConfigReader.getProperty("timeout.pageLoad"));
+        boolean maximize = Boolean.parseBoolean(ConfigReader.getProperty("window.maximize"));
+
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicit));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(pageLoad));
+
+        if (maximize) {
+            driver.manage().window().maximize();
+        }
+    }
+
+    public static WebDriver getDriver() {
+        if (driver == null) initDriver();
+        return driver;
+    }
+
+    public static void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
+}
