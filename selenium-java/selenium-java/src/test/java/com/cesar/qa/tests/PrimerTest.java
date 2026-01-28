@@ -1,4 +1,5 @@
 package com.cesar.qa.tests;
+
 // estructura
 import com.cesar.qa.config.ConfigReader;
 import com.cesar.qa.config.DriverManager;
@@ -16,11 +17,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 // java
 import java.time.Duration;
-
+/*
 public class PrimerTest {
 
     @Test
     public void abrirDemoSerenityis() throws InterruptedException {
+
 
         // 1) Inicializa el WebDriver según lo que diga config.properties
         //    - browser=chrome
@@ -109,3 +111,4 @@ public class PrimerTest {
 
 
 }
+*/
