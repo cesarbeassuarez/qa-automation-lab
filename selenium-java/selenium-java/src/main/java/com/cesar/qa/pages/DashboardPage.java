@@ -16,15 +16,27 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 public class DashboardPage {
     // Locators de la página dashboard
+    private final By dashboardBody = By.cssSelector("body[id='s-DashboardPage']"); // Dashboard body id
     private final By dashboardHeader = By.cssSelector("section[class='content-header']>h1"); // titulo de dashboard: 'Tablero'
 
     // Wait (usa el driver del DriverManager)
     private final WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
 
     public boolean estaVisible() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader)).isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardBody)).isDisplayed();
     }
 
+    public String obtenerTitulo() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader)).getText();
+    }
 
+    public boolean estaVisibleSafe() {
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardBody));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 }

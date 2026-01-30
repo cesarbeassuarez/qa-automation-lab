@@ -7,11 +7,12 @@ public class LoginTestRunner {
 
         LoginPositiveTests positive = new LoginPositiveTests();
         positive.loginValido_deberiaIngresar();
+        positive.clickLoginSinTipear();
 
         LoginNegativeTests negative = new LoginNegativeTests();
         negative.loginInvalido_passwordIncorrecta_muestraError();
-        negative.loginInvalido_camposVacios_muestraError();
-        negative.clickLoginSinCredenciales();
+        negative.loginInvalido_usuarioIncorrecto_muestraError();
+        negative.loginInvalido_tipearEspacios();
 
     }
 }
