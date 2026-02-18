@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="QA Automation Lab">
+
+    <test name="Login Tests">
+        <classes>
+            <class name="com.cesar.qa.tests.login.LoginPositiveTests"/>
+            <class name="com.cesar.qa.tests.login.LoginNegativeTests"/>
+        </classes>
+    </test>
+
+</suite>

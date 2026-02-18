@@ -1,6 +1,7 @@
 package com.cesar.qa.pages;
 // === Infraestructura del framework ===
 import com.cesar.qa.config.DriverManager;
+import com.cesar.qa.base.BasePage;
 
 // === Selenium: localizadores y elementos ===
 import org.openqa.selenium.By;
@@ -15,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 // === Java ===
 import java.time.Duration;
 
-public class LoginPage {
+public class LoginPage extends BasePage{ // wait ya viene de BasePage, no hay que declararlo
 
     // Locators de la página de login
     private final By usernameInput = By.id("LoginPanel0_Username"); // input username
@@ -33,9 +34,6 @@ public class LoginPage {
     private final By enlaceAppStore = By.cssSelector("a[class='app-store-link']"); // enlace App store
 
     private final By errorMessage = By.cssSelector(".toast-message"); // panel de error que aparece luego de ingresar mal credenciales de inicio
-
-    // Wait (usa el driver del DriverManager)
-    private final WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
 
     // Ingresar usuario
     public void enterUsername(String username) {
