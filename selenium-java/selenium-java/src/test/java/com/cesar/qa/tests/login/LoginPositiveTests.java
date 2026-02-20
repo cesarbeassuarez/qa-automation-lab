@@ -9,6 +9,7 @@ import com.cesar.qa.utils.check;
 import com.cesar.qa.pages.DashboardPage;
 import com.cesar.qa.pages.LoginPage;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LoginPositiveTests extends BaseTest{
@@ -19,8 +20,8 @@ public class LoginPositiveTests extends BaseTest{
 
         DashboardPage dashboard = new DashboardPage();
 
-        check.visible(dashboard.estaVisible(), "Dashboard visible luego de login válido");
-        check.equals(dashboard.obtenerTitulo(), "Tablero", "Título del dashboard");
+        Assert.assertTrue(dashboard.estaVisible(), "Dashboard visible luego de login válido");
+        Assert.assertEquals(dashboard.obtenerTitulo(), "Tablero", "Título del dashboard");
     }
     // Click sin escribir nada (por defecto vienen credenciales correctas tipeadas)
     @Test
@@ -30,8 +31,8 @@ public class LoginPositiveTests extends BaseTest{
 
         DashboardPage dashboard = new DashboardPage();
 
-        check.visible(dashboard.estaVisible(),"Dashboard visible luego de login válido");
-        check.equals(dashboard.obtenerTitulo(), "Tablero", "Título del dashboard");
+        Assert.assertTrue(dashboard.estaVisible(), "Dashboard visible luego de login válido");
+        Assert.assertEquals(dashboard.obtenerTitulo(), "Tablero", "Título del dashboard");
     }
 
 }
