@@ -12,6 +12,7 @@ public class DriverManager {
     private static WebDriver driver;
 
     public static void initDriver() {
+        System.out.println(">>> initDriver: driver es null? " + (driver == null));
         if (driver != null) return;
 
         String browser = ConfigReader.getProperty("browser");
@@ -21,7 +22,11 @@ public class DriverManager {
 
         switch (browser.toLowerCase()) {
             case "chrome":
+                System.out.println(">>> Antes de chromedriver setup");
                 WebDriverManager.chromedriver().setup();
+                //System.setProperty("webdriver.chrome.driver",
+                //        "C:\\Users\\Usuario\\.cache\\selenium\\chromedriver\\win64\\145.0.7632.117\\chromedriver.exe");
+                System.out.println(">>> Después de chromedriver setup");
 
                 ChromeOptions options = new ChromeOptions();
                 if (headless) {
@@ -31,7 +36,10 @@ public class DriverManager {
                 options.addArguments("--disable-gpu");
                 options.addArguments("--no-sandbox");
 
+                System.out.println(">>> Antes de new ChromeDriver");
                 driver = new ChromeDriver(options);
+                System.out.println(">>> Chrome abierto OK");
+
                 break;
 
             default:

@@ -9,5 +9,9 @@
             <class name="com.cesar.qa.tests.login.LoginNegativeTests"/>
         </classes>
     </test>
-
+    <test name="Clientes Tests">
+        <classes>
+            <class name="com.cesar.qa.tests.clientes.ClientesTests"/>
+        </classes>
+    </test>
 </suite>

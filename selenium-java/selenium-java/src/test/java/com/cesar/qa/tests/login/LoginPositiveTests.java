@@ -1,11 +1,7 @@
 package com.cesar.qa.tests.login;
 
-import com.cesar.qa.config.ConfigReader;
-import com.cesar.qa.config.DriverManager;
+// === Infraestructura del framework ===
 import com.cesar.qa.base.BaseTest;
-
-import com.cesar.qa.utils.check;
-
 import com.cesar.qa.pages.DashboardPage;
 import com.cesar.qa.pages.LoginPage;
 

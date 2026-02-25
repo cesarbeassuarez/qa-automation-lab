@@ -1,20 +1,13 @@
 package com.cesar.qa.pages;
 // === Infraestructura del framework ===
-import com.cesar.qa.config.DriverManager;
 import com.cesar.qa.base.BasePage;
 
 // === Selenium: localizadores y elementos ===
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 // === Selenium: esperas explícitas ===
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-// === Java ===
-import java.time.Duration;
 
 public class LoginPage extends BasePage{ // wait ya viene de BasePage, no hay que declararlo
 
