@@ -1,3 +1,92 @@
-# 🔬 QA Automation Lab<br>
-A Selenium WebDriver + Java + TestNG automation framework, built from scratch and documented session by session.<br>
-This is not a course project. It's a working framework where every architectural decision, every problem, and every solution is documented publicly. Built by a QA engineer with 4+ years of experience testing enterprise ERP systems.<br>
+# 🔬 QA Automation Lab
+
+**A Selenium WebDriver + Java + TestNG automation framework, built from scratch and documented session by session.**
+
+This is not a course project. It's a working framework where every architectural decision, every problem, and every solution is documented publicly. Built by a QA engineer with 4+ years of experience testing enterprise ERP systems.
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Language | Java |
+| Automation | Selenium WebDriver |
+| Test Framework | TestNG |
+| Reporting | Allure Reports |
+| Data Source | Excel (Apache POI) |
+| Build | Maven |
+
+## 📂 Project Structure
+
+```
+selenium-java/
+├── src/
+│   ├── main/java/com/cesar/qa/
+│   │   ├── base/
+│   │   │   └── BasePage.java
+│   │   ├── config/
+│   │   │   ├── ConfigReader.java
+│   │   │   └── DriverManager.java
+│   │   ├── pages/
+│   │   │   ├── ClientesPage.java      (@Step agregados)
+│   │   │   ├── DashboardPage.java     (@Step agregados)
+│   │   │   └── LoginPage.java         (@Step agregados)
+│   │   └── utils/
+│   │       ├── AllureScreenshot.java   ← NUEVO
+│   │       ├── check/
+│   │       └── ExcelReader.java
+│   └── test/
+│       ├── java/com/cesar/qa/
+│       │   ├── base/
+│       │   │   └── BaseTest.java
+│       │   ├── data/
+│       │   │   ├── ClientesTestData.java
+│       │   │   └── TestData.java
+│       │   ├── listeners/
+│       │   │   └── AllureListener.java ← NUEVO
+│       │   └── tests/
+│       │       ├── clientes/
+│       │       │   └── ClientesTests.java    (@Description, @Severity)
+│       │       └── login/
+│       │           ├── LoginNegativeTests.java (@Description, @Severity)
+│       │           └── LoginPositiveTests.java (@Description, @Severity)
+│       └── resources/
+│           ├── testdata/
+│           │   └── clientes-data.xlsx
+│           ├── allure.properties       ← NUEVO
+│           ├── config.properties
+│           ├── logback.xml
+│           └── testng.xml              (listener agregado)
+└── pom.xml (Allure + AspectJ agregados)
+│
+├── playwright/             # 🔜 Next — planned
+└── cypress/                # 🔜 Future — planned
+```
+
+## 🧭 Build Log — Session by Session
+
+Each session represents a real development iteration. Full context on decisions and tradeoffs documented on [my blog](https://cesarbeassuarez.dev/).
+
+| Session | Focus | Date |
+|---|---|---|
+| 1 | [Selenium + Java desde cero](https://cesarbeassuarez.dev/) — Why Selenium over Cypress, Java over Python, TestNG over JUnit. First test executed. | 30 Dec 2025 |
+| 2 | [Por qué borré todo y volví al día 1](https://cesarbeassuarez.dev/) — Had a full framework built with AI. Didn't understand it. Deleted everything and started from scratch. | 08 Jan 2026 |
+| 3 | [pom.xml, Logback, estructura de carpetas](https://cesarbeassuarez.dev/) — Maven config, logging with Logback, base/pages/utils/test folder structure. | 09 Jan 2026 |
+| 4 | [Dejé de hardcodear: config.properties y DriverManager](https://cesarbeassuarez.dev/) — Eliminated hardcoded values. Centralized driver and config management. | 13 Jan 2026 |
+| 5 | [Localizadores en Selenium](https://cesarbeassuarez.dev/) — DOM, selectors, locator hierarchy from id to XPath. Real login test. | 16 Jan 2026 |
+| 6 | [Esperas Implícitas, Explícitas y Fluent Waits](https://cesarbeassuarez.dev/) — Why Thread.sleep kills tests. implicitWait vs WebDriverWait vs FluentWait. | 21 Jan 2026 |
+| 7 | [Page Object Model: separar Pages de Tests](https://cesarbeassuarez.dev/) — LoginPage, DashboardPage anatomy. Pages interact with UI, Tests decide pass/fail. | 30 Jan 2026 |
+| 8 | [Framework TestNG](https://cesarbeassuarez.dev/) — Migrated from manual main() to @Test, @BeforeMethod, BaseTest, testng.xml. | 18 Feb 2026 |
+| 9 | [DataProviders y assertions reales](https://cesarbeassuarez.dev/) — Replaced check.java with TestNG Assert. DataProviders in separate class. 5 tests, clean separation. | 20 Feb 2026 |
+| 10 | [Validar grilla de clientes contra Excel](https://cesarbeassuarez.dev/) — SlickGrid, virtual scrolling, Apache POI. 91 records validated in 1 min. | 25 Feb 2026 |
+| 11 | [Allure Reports — reporting profesional](https://cesarbeassuarez.dev/) — @Step, @Description, @Severity, auto screenshots on failure. Full implementation. | 26 Feb 2026 |
+
+## 🎯 What makes this different
+
+- **Not a tutorial project.** Every decision reflects real testing experience on enterprise systems.
+- **Documented tradeoffs.** I explain *why*, not just *how*.
+- **Built in public.** Progress, mistakes, and iterations — all visible.
+
+## 📝 Related content
+
+- Blog: [cesarbeassuarez.dev](https://cesarbeassuarez.dev/)
+- LinkedIn: [linkedin.com/in/cesbs](https://www.linkedin.com/in/cesbs/)
