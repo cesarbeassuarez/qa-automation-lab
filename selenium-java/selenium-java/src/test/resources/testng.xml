@@ -3,6 +3,10 @@
 
 <suite name="QA Automation Lab">
 
+    <listeners>
+        <listener class-name="com.cesar.qa.listeners.AllureListener"/>
+    </listeners>
+
     <test name="Login Tests">
         <classes>
             <class name="com.cesar.qa.tests.login.LoginPositiveTests"/>

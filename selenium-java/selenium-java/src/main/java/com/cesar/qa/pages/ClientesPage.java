@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import io.qameta.allure.Step;
+
 public class ClientesPage extends BasePage {
 
     // ===== LOCATORS =====
@@ -48,6 +50,7 @@ public class ClientesPage extends BasePage {
      * Lee TODA la grilla una sola vez scrolleando de arriba a abajo.
      * Guarda los datos en memoria para consultas rápidas.
      */
+    @Step("Leer grilla completa de clientes")
     public void leerGrillaCompleta() {
         datosGrilla = new HashMap<>();
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -94,6 +97,7 @@ public class ClientesPage extends BasePage {
      * Obtiene un valor de la grilla ya leída en memoria.
      * No toca el DOM — es instantáneo.
      */
+    @Step("Obtener valor de cliente {clienteId} en columna {indiceColumna}")
     public String obtenerValorPorId(String clienteId, int indiceColumna) {
         if (datosGrilla == null) {
             throw new RuntimeException("Llamá a leerGrillaCompleta() antes de consultar datos");

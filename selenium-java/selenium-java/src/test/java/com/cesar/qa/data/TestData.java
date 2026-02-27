@@ -9,9 +9,9 @@ public class TestData {
     @DataProvider(name = "credencialesInvalidas")
     public static Object[][] credencialesInvalidas() {
         return new Object[][] {
-                {"Password incorrecta","admin", "mal", "Error de validación: ¡Nombre de usuario o contraseña inválidos!"},
-                {"Usuario incorrecto","mal", "serenity", "Error de validación: ¡Nombre de usuario o contraseña inválidos!"},
-                {"Espacios en blanco"," ", " ", "Por favor, valide los campos vacíos o inválidos (marcados en rojo) antes de enviar el formulario"}
+                {"Password incorrecta","admin", "mal", "Error de validación: ¡Nombres de usuario o contraseña inválidos!"},
+                {"Usuario incorrecto","mal", "serenity", "Error de validación: ¡Nombres de usuario o contraseña inválidos!"},
+                {"Espacios en blanco"," ", " ", "Por favor, valide los campos vacíoss o inválidos (marcados en rojo) antes de enviar el formulario"}
         };
     }
 

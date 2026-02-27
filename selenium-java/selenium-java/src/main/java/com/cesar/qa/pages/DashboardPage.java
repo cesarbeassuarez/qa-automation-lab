@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 // === Selenium: esperas explícitas ===
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-// === Java ===
+import io.qameta.allure.Step;
 
 public class DashboardPage extends BasePage { // wait ya viene de BasePage, no hay que declararlo
 
@@ -18,10 +18,12 @@ public class DashboardPage extends BasePage { // wait ya viene de BasePage, no h
     private final By btnNorthwind = By.cssSelector("a[href='#nav_menu1_2_1']");
     private final By linkClientes = By.cssSelector("a[href='/Northwind/Customer']");
 
+    @Step("Verificar que el dashboard está visible")
     public boolean estaVisible() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardBody)).isDisplayed();
     }
 
+    @Step("Obtener título del dashboard")
     public String obtenerTitulo() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(dashboardHeader)).getText();
     }
@@ -36,6 +38,7 @@ public class DashboardPage extends BasePage { // wait ya viene de BasePage, no h
     }
 
     // Método para navegar
+    @Step("Navegar a Clientes desde menú")
     public void irAClientes() {
         wait.until(ExpectedConditions.elementToBeClickable(btnNorthwind)).click();
         wait.until(ExpectedConditions.elementToBeClickable(linkClientes)).click();

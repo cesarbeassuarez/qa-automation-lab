@@ -9,6 +9,8 @@ import org.openqa.selenium.WebElement;
 // === Selenium: esperas explícitas ===
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import io.qameta.allure.Step;
+
 public class LoginPage extends BasePage{ // wait ya viene de BasePage, no hay que declararlo
 
     // Locators de la página de login
@@ -43,11 +45,13 @@ public class LoginPage extends BasePage{ // wait ya viene de BasePage, no hay qu
     }
 
     // Hacer clic en botón de login
+    @Step("Click en botón Login")
     public void clickLogin() {
         wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
     }
 
     // Fn LOGIN
+    @Step("Login como {username}")
     public void loginComo(String username, String password) {
         enterUsername(username);
         enterPassword(password);
@@ -55,14 +59,10 @@ public class LoginPage extends BasePage{ // wait ya viene de BasePage, no hay qu
     }
 
     // msj error
+    @Step("Obtener mensaje de error")
     public String obtenerMensajeError() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMessage)).getText();
     }
 
 
 }
-
-
-
-
-

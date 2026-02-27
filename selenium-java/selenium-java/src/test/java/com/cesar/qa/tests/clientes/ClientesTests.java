@@ -12,6 +12,10 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+
 public class ClientesTests {
 
     private ClientesPage clientesPage;
@@ -37,6 +41,8 @@ public class ClientesTests {
     }
 
     @Test(dataProvider = "datosClientes", dataProviderClass = ClientesTestData.class)
+    @Description("Valida datos de cliente en grilla contra Excel")
+    @Severity(SeverityLevel.NORMAL)
     public void validarDatosCliente(String id, String empresa, String contacto,
                                     String titulo, String region, String codigoPostal,
                                     String pais, String ciudad, String telefono,
