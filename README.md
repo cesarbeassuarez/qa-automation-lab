@@ -27,11 +27,11 @@ selenium-java/
 │   │   │   ├── ConfigReader.java
 │   │   │   └── DriverManager.java
 │   │   ├── pages/
-│   │   │   ├── ClientesPage.java      (@Step agregados)
-│   │   │   ├── DashboardPage.java     (@Step agregados)
-│   │   │   └── LoginPage.java         (@Step agregados)
+│   │   │   ├── ClientesPage.java      
+│   │   │   ├── DashboardPage.java   
+│   │   │   └── LoginPage.java       
 │   │   └── utils/
-│   │       ├── AllureScreenshot.java   ← NUEVO
+│   │       ├── AllureScreenshot.java 
 │   │       ├── check/
 │   │       └── ExcelReader.java
 │   └── test/
@@ -42,21 +42,21 @@ selenium-java/
 │       │   │   ├── ClientesTestData.java
 │       │   │   └── TestData.java
 │       │   ├── listeners/
-│       │   │   └── AllureListener.java ← NUEVO
+│       │   │   └── AllureListener.java 
 │       │   └── tests/
 │       │       ├── clientes/
-│       │       │   └── ClientesTests.java    (@Description, @Severity)
+│       │       │   └── ClientesTests.java   
 │       │       └── login/
-│       │           ├── LoginNegativeTests.java (@Description, @Severity)
-│       │           └── LoginPositiveTests.java (@Description, @Severity)
+│       │           ├── LoginNegativeTests.java 
+│       │           └── LoginPositiveTests.java 
 │       └── resources/
 │           ├── testdata/
 │           │   └── clientes-data.xlsx
-│           ├── allure.properties       ← NUEVO
+│           ├── allure.properties       
 │           ├── config.properties
 │           ├── logback.xml
-│           └── testng.xml              (listener agregado)
-└── pom.xml (Allure + AspectJ agregados)
+│           └── testng.xml              
+└── pom.xml 
 │
 ├── playwright/             # 🔜 Next — planned
 └── cypress/                # 🔜 Future — planned
