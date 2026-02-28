@@ -19,6 +19,9 @@ This is not a course project. It's a working framework where every architectural
 
 ```
 selenium-java/
+├── .allure/
+├── .idea/
+├── allure-results/
 ├── src/
 │   ├── main/java/com/cesar/qa/
 │   │   ├── base/
