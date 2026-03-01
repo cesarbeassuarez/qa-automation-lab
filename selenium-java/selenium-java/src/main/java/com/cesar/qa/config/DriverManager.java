@@ -7,6 +7,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class DriverManager {
 
     private static WebDriver driver;
@@ -36,6 +39,9 @@ public class DriverManager {
                 options.addArguments("--disable-gpu");
                 options.addArguments("--no-sandbox");
                 options.addArguments("--lang=es");
+                Map<String, Object> prefs = new HashMap<>();
+                prefs.put("intl.accept_languages", "es-ES,es");
+                options.setExperimentalOption("prefs", prefs);
 
                 System.out.println(">>> Antes de new ChromeDriver");
                 driver = new ChromeDriver(options);
