@@ -23,7 +23,7 @@ public class LoginPositiveTests extends BaseTest{
         DashboardPage dashboard = new DashboardPage();
 
         Assert.assertTrue(dashboard.estaVisible(), "Dashboard visible luego de login válido");
-        Assert.assertEquals(dashboard.obtenerTitulo(), "Tableros", "Título del dashboard");
+        Assert.assertEquals(dashboard.obtenerTitulo(), "Tablero", "Título del dashboard");
     }
     // Click sin escribir nada (por defecto vienen credenciales correctas tipeadas)
     @Test
