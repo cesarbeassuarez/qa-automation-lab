@@ -10,6 +10,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout código
@@ -28,10 +30,10 @@ jobs:
 
       - name: Configurar headless para CI
         run: |
-          sed -i 's/headless=false/headless=true/' selenium-java/src/test/resources/config.properties
+          sed -i 's/headless=false/headless=true/' selenium-java/selenium-java/src/test/resources/config.properties
 
       - name: Ejecutar tests
-        working-directory: selenium-java
+        working-directory: selenium-java/selenium-java
         run: mvn clean test
 
       - name: Instalar Allure CLI
@@ -43,14 +45,14 @@ jobs:
 
       - name: Generar reporte Allure
         if: always()
-        run: allure generate selenium-java/allure-results -o allure-report --clean
+        run: allure generate selenium-java/selenium-java/allure-results -o allure-report --clean
 
       - name: Guardar allure-results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: selenium-java/allure-results/
+          path: selenium-java/selenium-java/allure-results/
 
       - name: Guardar allure-report
         if: always()
