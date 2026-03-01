@@ -42,17 +42,17 @@ jobs:
           curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.25.0/allure-2.25.0.tgz
           tar -xzf allure.tgz
           echo "$PWD/allure-2.25.0/bin" >> $GITHUB_PATH
-
+        
       - name: Generar reporte Allure
         if: always()
-        run: allure generate selenium-java/selenium-java/allure-results -o allure-report --clean
-
+        run: allure generate selenium-java/selenium-java/target/allure-results -o allure-report --clean
+          
       - name: Guardar allure-results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
-          path: selenium-java/selenium-java/allure-results/
+          path: selenium-java/selenium-java/target/allure-results/
 
       - name: Guardar allure-report
         if: always()
