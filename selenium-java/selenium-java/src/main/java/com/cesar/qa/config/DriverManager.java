@@ -46,6 +46,7 @@ public class DriverManager {
 
                 System.out.println(">>> Antes de new ChromeDriver");
                 driver = new ChromeDriver(options);
+                driver.manage().window().setSize(new org.openqa.selenium.Dimension(1920, 1080));
                 System.out.println(">>> Chrome abierto OK");
 
                 break;
