@@ -1,6 +1,6 @@
 # 🔬 QA Automation Lab
 
-**A Selenium WebDriver + Java + TestNG automation framework, built from scratch and documented session by session.**
+**A Selenium WebDriver + Java + TestNG automation framework, built from scratch with every architectural decision and problem documented publicly.**
 
 This is not a course project. It's a working framework where every architectural decision, every problem, and every solution is documented publicly. Built by a QA engineer with 4+ years of experience testing enterprise ERP systems.
 
@@ -90,11 +90,11 @@ selenium-java/
 └── cypress/                # 🔜 Future — planned
 ```
 
-## 🧭 Build Log — Session by Session
+## 🧭 Build Log
 
-Each session represents a real development iteration. Full context on decisions and tradeoffs documented on [my blog](https://cesarbeassuarez.dev/).
+Each entry represents a real development iteration. Full context on decisions and tradeoffs documented on [my blog](https://cesarbeassuarez.dev/).
 
-| Session | Focus | Date |
+| # | Focus | Date |
 |---|---|---|
 | 1 | [Selenium + Java desde cero](https://cesarbeassuarez.dev/selenium-java-dia-1/) — Why Selenium over Cypress, Java over Python, TestNG over JUnit. First test executed. | 30 Dec 2025 |
 | 2 | [Por qué borré todo y volví al día 1](https://cesarbeassuarez.dev/selenium-java-dia-2/) — Had a full framework built with AI. Didn't understand it. Deleted everything and started from scratch. | 08 Jan 2026 |
@@ -107,7 +107,7 @@ Each session represents a real development iteration. Full context on decisions 
 | 9 | [DataProviders y assertions reales](https://cesarbeassuarez.dev/selenium-java-sesion-9/) — Replaced check.java with TestNG Assert. DataProviders in separate class. 5 tests, clean separation. | 20 Feb 2026 |
 | 10 | [Validar grilla de clientes contra Excel](https://cesarbeassuarez.dev/selenium-java-sesion-10/) — SlickGrid, virtual scrolling, Apache POI. 91 records validated in 1 min. | 25 Feb 2026 |
 | 11 | [Allure Reports — reporting profesional](https://cesarbeassuarez.dev/selenium-java-sesion-11/) — @Step, @Description, @Severity, auto screenshots on failure. Full implementation. | 26 Feb 2026 |
-| 12 | [CI/CD con GitHub Actions — Automated pipeline](https://cesarbeassuarez.dev/github-actions-selenium-allure-ci-cd-pipeline/) — headless Chrome, Allure report generation, GitHub Pages deployment. +10 commits fixing real CI problems. | 02 Mar 2026 |
+| 12 | [CI/CD con GitHub Actions](https://cesarbeassuarez.dev/github-actions-selenium-allure-ci-cd-pipeline/) — Headless Chrome, Allure report generation, GitHub Pages deployment. +15 commits fixing real CI problems. | 02 Mar 2026 |
 
 ## 🎯 What makes this different
 
