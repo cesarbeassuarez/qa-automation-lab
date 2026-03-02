@@ -15,10 +15,33 @@ This is not a course project. It's a working framework where every architectural
 | Data Source | Excel (Apache POI) |
 | Build | Maven |
 
+## ⚙️ CI/CD Pipeline
+
+Every push to `main` triggers an automated pipeline:
+
+```
+Push to main
+    ↓
+GitHub Actions (Ubuntu + Java 17 + Chrome headless)
+    ↓
+mvn clean test (96 tests)
+    ↓
+Allure Report generated
+    ↓
+Published to GitHub Pages
+```
+
+**Live report:** [cesarbeassuarez.github.io/qa-automation-lab](https://cesarbeassuarez.github.io/qa-automation-lab/)
+
+The pipeline configures headless Chrome with forced Spanish locale and desktop resolution (1920×1080 via CDP), so tests behave identically to local execution. Timeout is increased from 10s to 30s for CI environments.
+
 ## 📂 Project Structure
 
 ```
 selenium-java/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
 ├── .allure/
 ├── .idea/
 ├── allure-results/
@@ -82,14 +105,17 @@ Each session represents a real development iteration. Full context on decisions 
 | 9 | [DataProviders y assertions reales](https://cesarbeassuarez.dev/selenium-java-sesion-9/) — Replaced check.java with TestNG Assert. DataProviders in separate class. 5 tests, clean separation. | 20 Feb 2026 |
 | 10 | [Validar grilla de clientes contra Excel](https://cesarbeassuarez.dev/selenium-java-sesion-10/) — SlickGrid, virtual scrolling, Apache POI. 91 records validated in 1 min. | 25 Feb 2026 |
 | 11 | [Allure Reports — reporting profesional](https://cesarbeassuarez.dev/selenium-java-sesion-11/) — @Step, @Description, @Severity, auto screenshots on failure. Full implementation. | 26 Feb 2026 |
+| 12 | [CI/CD con GitHub Actions — Automated pipeline](https://cesarbeassuarez.dev/github-actions-selenium-allure-ci-cd-pipeline/) — headless Chrome, Allure report generation, GitHub Pages deployment. +10 commits fixing real CI problems. | 02 Mar 2026 |
 
 ## 🎯 What makes this different
 
 - **Not a tutorial project.** Every decision reflects real testing experience on enterprise systems.
 - **Documented tradeoffs.** I explain *why*, not just *how*.
 - **Built in public.** Progress, mistakes, and iterations — all visible.
+- **CI/CD integrated.** Tests run automatically, reports are public.
 
 ## 📝 Related content
 
 - Blog: [cesarbeassuarez.dev](https://cesarbeassuarez.dev/)
+- Live report: [cesarbeassuarez.github.io/qa-automation-lab](https://cesarbeassuarez.github.io/qa-automation-lab/)
 - LinkedIn: [linkedin.com/in/cesbs](https://www.linkedin.com/in/cesbs/)
