@@ -120,8 +120,8 @@ Each entry represents a real development iteration. Full context on decisions an
 
 This lab is intentionally documented in public and still evolving. Current known gaps:
 
-- [ ] #1 Grid validation: detect extra/missing rows (web vs Excel)
-- [ ] #2 Grid validation: validate row order (or define order-insensitive strategy)
+- [ ] [#1 Grid validation: detect extra/missing rows (web vs Excel)](https://github.com/cesarbeassuarez/qa-automation-lab/issues/1)
+- [ ] [#2 Grid validation: validate row order (or define order-insensitive strategy)](https://github.com/cesarbeassuarez/qa-automation-lab/issues/2)
 
 ## 📝 Related content
 
