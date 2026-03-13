@@ -35,6 +35,8 @@ Published to GitHub Pages
 
 **Live report:** [cesarbeassuarez.github.io/qa-automation-lab](https://cesarbeassuarez.github.io/qa-automation-lab/)
 
+Note: The report includes intentional failures. I modified expected values to force mismatches against the web app, so the Allure report shows real failure screenshots, logs, and error traces. This demonstrates how the framework handles failures — not actual bugs in the code.
+
 The pipeline configures headless Chrome with forced Spanish locale and desktop resolution (1920×1080 via CDP), so tests behave identically to local execution. Timeout is increased from 10s to 30s for CI environments.
 
 ## 📂 Project Structure
