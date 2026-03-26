@@ -88,9 +88,6 @@ selenium-java/
 │           ├── logback.xml
 │           └── testng.xml              
 └── pom.xml 
-│
-├── playwright/             # 🔜 Next — planned
-└── cypress/                # 🔜 Future — planned
 ```
 
 ## 🧭 Build Log
